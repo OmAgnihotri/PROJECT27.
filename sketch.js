@@ -17,11 +17,11 @@ bobObject3=new Bob (700,500,50);
 bobObject4=new Bob (800,500,50);
 bobObject5=new Bob (900,500,50);
 
-rope1= new Rope (bobObject1.body,roofObject.body,-bobDiameter,0)
-
+rope1= new Rope (bobObject1.body,roofObject.body,0,0,)
+rope2= new Rope (bobObject2.body,roofObject.body,0,0,)
 rope3= new Rope(bobObject3.body,roofObject.body,0,0);
-
-
+rope4= new Rope (bobObject4.body,roofObject.body,0,0,)
+rope5= new Rope (bobObject5.body,roofObject.body,0,0,)
 }
 
 function draw() {
@@ -44,5 +44,5 @@ function draw() {
 }
 function keyPressed(){
 
-  
+
 }
