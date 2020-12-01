@@ -10,13 +10,14 @@ class Rope{
         this.rope = Constraint.create(options);
         World.add(world,this.rope);   
     }
-    0
+    
     display(){
         var pointA=this.rope.bodyA.position;
         var pointB=this.rope.bodyB.position;
-        strokeWeight(-3);
+        
         fill("black")
-        line(pointA.x,pointA.y,pointB.x,pointB.y);
-
+        
+        line(pointA.x,pointA.y,pointB.x+this.offsetX,pointB.y+this.offsetY);
+       
     }
 }

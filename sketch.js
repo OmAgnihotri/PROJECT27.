@@ -9,6 +9,8 @@ function setup() {
  engine = Engine.create();
  world = engine.world;
 
+ bobDiameter=100;
+
 roofObject=new Roof(700,100,800,30);
 
 bobObject1=new Bob (500,500,50);
@@ -17,11 +19,11 @@ bobObject3=new Bob (700,500,50);
 bobObject4=new Bob (800,500,50);
 bobObject5=new Bob (900,500,50);
 
-rope1= new Rope (bobObject1.body,roofObject.body,0,0,)
-rope2= new Rope (bobObject2.body,roofObject.body,0,0,)
-rope3= new Rope(bobObject3.body,roofObject.body,0,0);
-rope4= new Rope (bobObject4.body,roofObject.body,0,0,)
-rope5= new Rope (bobObject5.body,roofObject.body,0,0,)
+rope3= new Rope (bobObject3.body,roofObject.body,0,0);
+rope2= new Rope (bobObject2.body,roofObject.body,-bobDiameter,0);
+rope1= new Rope(bobObject1.body,roofObject.body,-bobDiameter*2,0);
+rope4= new Rope (bobObject4.body,roofObject.body,bobDiameter,0);
+rope5= new Rope (bobObject5.body,roofObject.body,bobDiameter*2,0);
 }
 
 function draw() {
@@ -42,7 +44,11 @@ function draw() {
   bobObject4.display();
   bobObject5.display();
 }
-function keyPressed(){
 
+function keyPressed(){
+if(keyCode===UP_ARROW){
+  console.log(bobObject1.body);
+  Matter.Body.applyForce(bobObject1.body,bobObject1.body.position,{x:-300,y:-290});
+}
 
 }
